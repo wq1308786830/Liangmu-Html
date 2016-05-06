@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <title>梁木</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta http-equiv="cleartype" content="on"/>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>发现</h1>
+    </header>
+</div>
+<form action="">
+    <div class="flex-box flx-wrp mt75 hcenter" id="img-container" onclick="checked_img()">
+        <div style="display: block"><label for="aa" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="aa"><img class="check-img"
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+        <div style="display: block"><label for="bb" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="bb"><img
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+        <div style="display: block"><label for="cc" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="cc"><img
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+        <div style="display: block"><label for="dd" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="dd"><img
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+        <div style="display: block"><label for="ee" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="ee"><img
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+        <div style="display: block"><label for="ff" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="ff"><img
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+        <div style="display: block"><label for="gg" class="label-img"><input type="radio" class="ino-radio" name="aa"
+                                                                             id="gg"><img
+                src="assets/images/mobile/1.png"
+                alt="" class="" width="60"
+                height="60"></label></div>
+    </div>
+    <div class="flex-box hcenter mt20"><button class="ui-btn ui-btn-green" style="width: 90%" onclick="location.href='https://www.baidu.com'">确认</button></div>
+
+    <div class="flex-box hcenter mt20"><label for="agree"><input type="checkbox" id="agree" name="agree"></label><a href="https://www.baidu.com" class="grey">梁木注册协议</a></div>
+</form>
+
+</body>
+<script>
+    function checked_img() {
+        var radios = document.getElementsByTagName("input");
+        var checked_img;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                checked_img = radios[i].parentNode.lastChild;
+                try {
+                    checked_img.className = "checked-img";
+                } finally {
+
+                }
+            } else {
+                (radios[i].parentNode.lastChild).className = "check-img";
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>职位详情</h1>
+        <a class="goBack" href="javascript:X.pageBack();"></a>
+    </header>
+</div>
+<section class="box-content">
+    <div class="job">
+        <div class="pt15 pr20 pb10 pl20">
+            <h2 class="fs15 c58 ln-hgt1">内容运营经理<p class="matchingRate fr" style="border-bottom: 4px #eee solid;width: 16%;"><span class="percent-bd" style="width: 90%"><span>90%</span></span></p></h2>
+            <p class="mt10 ln-hgt1"><span class="msmal-gray">¥50万/年</span><span class="lsmal-gray">杭州 | 向运营总监汇报</span></p>
+        </div>
+    </div>
+
+    <div class="box-wrap mt10 pt10 pr20 pb10 pl20" style="border: none">
+        <p class="fs10 ln-hgt1 mt10 cb8 mb5" style="text-align: right">最近登录: 昨天</p>
+        <div class="box-flex">
+            <div class="txt-c">
+                <img src="assets/images/mobile/default_avatar.png" width="80" height="80" class="avatar">
+            </div>
+            <dl class="ml10 pl10 pr10 box-flex-item">
+                <dt class="fs15 c58">刘大宝<span class="fs10 green-bd green br4 ml15" style="border-radius: 14px;padding: 2px 8px">创意总监</span></dt>
+                <dd class="fs14 c89 mt15 ln-hgt1">明道协同工作平台 | 运营总监</dd>
+                <dd class="fs12 cb6 mt6">公司规模 1000人 | 天使轮</dd>
+            </dl>
+        </div>
+    </div>
+
+
+    <div class="box-wrap mt10 pr20 pb10 pl20" style="border: none">
+        <p class="pt10 pb5 pl20 fs14 c58 bb team-intro">团队介绍<p>
+        <p class="ln-hgt1 fs12 cyllw mt10 mb10" style="line-height: 1.6;"><span class="orange-bd br4 pl5 pr5 mr5">包吃</span><span class="orange-bd br4 pl5 pr5 mr5">包住</span><span class="orange-bd br4 pl5 pr5 mr5">包老婆</span></p>
+        <p class="fs12 c89 pb15" style="border-bottom: 1px #e7e7e7 dashed;line-height: 1.8">婚礼纪是一个专注婚庆市场，连接线上线下需求的平台。
+    我们正在做的：大数据挖掘用户需求，致力于做到婚庆的一站式服务；开拓社交新领域，玩转低频需求市场；连结商家网搜新用户，达成更快更精准的市场部署</p>
+        <p class="fs12 c89 mt10">地址：杭州市西湖区翠柏路83号电子商务产业园</p>
+        <p class="fs12 c89 mb5">公司主页：<a href="http://mingdao.com/">http://mingdao.com/</a></p>
+    </div>
+
+
+    <div class="box-wrap mt10 pr20 pb10 pl20" style="border: none">
+        <p class="pt10 pb5 pl20 fs14 c58 bb pos-intro mb10">职位介绍</p>
+        <dl class="c89 fs12" style="line-height: 2">
+            <dd>1、分析用户需求，从提升用户流量和活跃度的角度策划线上线下活动、撰写执行方案，主导活动从创意到落地全过程，完成指定目标；</dd>
+            <dd>2、配合市场共同制定推广运营方案；</dd>
+            <dd>3、整理和分析运营的各项数据、情况，及时提出优化措施；</dd>
+        </dl>
+    </div>
+
+
+    <footer id="footer" class="clearfix">
+        <div class="box-flex btn-grp">
+            <p class="box-flex-item pl10 pr5" style="line-height: 50px">
+                <input type="button" value="主动沟通" style="height:38px;line-height: 38px;font-size: 14px" class="ui-btn-z ui-btn-green br4" onclick="javascript:X.job.delivery.submit('@{jobVO.getId()}');">
+            </p>
+            <p class="box-flex-item pr10 pl5" style="line-height: 50px">
+                <input type="button" value="关注职位" style="height:38px;line-height: 38px;font-size: 14px" class="ui-btn-z ui-btn-green br4" onclick="javascript:X.job.follow.submit('@{jobVO.getId()}');">
+            </p>
+        </div>
+    </footer>
+
+</section>
+
+<script type="text/javascript" src="/assets/javascripts/mobile/zepto.min.js"></script>
+<script type="text/javascript" src="/assets/javascripts/mobile/app.js"></script>
+<script type="text/javascript" src="/assets/javascripts/mobile/job.js"></script>
+</body>
+</html>

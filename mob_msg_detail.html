@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>@{jobVO.getBossName()}</h1>
+        <a class="goBack" href="javascript:X.pageBack();"></a>
+    </header>
+</div>
+
+<section class="box-content">
+    <div class="box-wrap pt10 pb10" style="border: none">
+        <div class="box-flex c6a">
+            <dl class="svgs box-flex-item txt-c flxbx3 fs16" style="line-height: 2.2">内容运营专员</dl>
+            <dl class="box-flex-item flxbx7" style="padding-left: 6px; border-left: 1px #eee solid;">
+                <dt class="fs14 c89">李二宝 | 明道协同工作平台  | 研发主管</dt>
+                <dd class="fs10 grey"><span class="dflticon">￥10k-15k</span><span class="dflticon">杭州</span><span class="dflticon">1-3年经验</span></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="box-userHint">
+        <a style="height: 24px;line-height: 24px;color: #fff;font-size: 14px">本次礼金收入 ￥30元，开始沟通即到账<i class="sclose">x</i></a>
+    </div>
+</section>
+
+<section class="messages mt10 ml10 mr10 clearfix"  style="padding-bottom:60px;">
+    <div class="message clearfix mt5">
+        <div class="leftMessage">
+            <img src="assets/images/mobile/1.png" width="30" height="30" class="avatar">
+            <p class="greyTag" style="margin-top: 0">你好，上次你提到春节之后会考虑新的职位机会是吧？我觉得可以微信上面沟通一下</p>
+        </div>
+    </div>
+    <div class="message clearfix mt5">
+        <div class="rightMessage">
+            <img src="assets/images/mobile/1.png" width="30" height="30" class="avatar">
+            <p class="greenTag white" style="margin-top: 0;background-color: #69d27a">好的，我的微信是 zhaosan0571好的，我的微信是 zhaosan0571好的，我的微信是 zhaosan0571</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="clearfix">
+    <div style="float:right;margin-left:-125px;line-height: 50px">
+        <input type="button" class="ui-btn-z ui-btn-green br4 mr5 fs12" style="width:70px;height:30px;line-height: 30px;font-size: 12px;" value="发送" onclick="javascript:X.message.applicant.send_message();" />
+    </div>
+    <div style="width:auto;height:48px;line-height:48px;margin-right:85px;margin-left:10px;">
+        <input type="text" style="border-radius: 50px;border: 1px #eee solid;font-size: 12px;" name="content" placeholder="消息内容文字输入"  />
+        <input type="hidden" name="jobId" value="@jobVO.getId()" />
+        <input type="hidden" name="receiveId" value="@jobVO.getBossId()" />
+    </div>
+</footer>
+<script>
+    document.getElementsByClassName("sclose")[0].addEventListener("click", function (e) {
+        document.getElementById("box-userHint").style.display = "none";
+    });
+</script>
+</body>
+</html>

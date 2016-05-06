@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>公司入驻</h1>
+        <a class="goBack" href="javascript:X.pageBack();"></a>
+    </header>
+</div>
+<section id="profile-form" class="box-content">
+    <form id="form" method="post" action="/boss/profile/create_corporation" target="iframe" enctype="multipart/form-data">
+        <div class="menu">
+            <a>
+                <p>公司全名</p>
+                <input name="fullName" type="text" value="" />
+            </a>
+        </div>
+        <div class="menu">
+            <a>
+                <p>简称/品牌</p>
+                <input name="brandName" type="text" value="" />
+            </a>
+        </div>
+        <div class="menu">
+            <a>
+                <p>所属行业</p>
+                <select name="industry">
+                    <option value="@{indutry.getName()}">dasddasd</option>
+                </select>
+                <i class="rightArrow"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <a>
+                <p>所在地</p>
+                <select name="">
+                    <option value=""></option>
+                </select>
+                <i class="rightArrow"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <a>
+                <p>公司地址</p>
+                <input name="brandName" type="text" value="" />
+            </a>
+        </div>
+        <div class="menu">
+            <a>
+                <p>公司规模</p>
+                <select name="">
+                    <option value=""></option>
+                </select>
+                <i class="rightArrow"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <a class="last">
+                <p>发展阶段</p>
+                <select name="">
+                    <option value=""></option>
+                </select>
+                <i class="rightArrow"></i>
+            </a>
+        </div>
+
+        <p class="fs16 ml20 mt10 mb5">简要介绍</p>
+        <div class="menu">
+            <a style="height: auto" class="last">
+            <textarea class="fs12 grey" style="border: none" placeholder="输入公司的简单描述吧"></textarea>
+            </a>
+        </div>
+        <div class="menu">
+            <a>
+                <p>公司亮点</p>
+                <select name="">
+                    <option value=""></option>
+                </select>
+                <i class="rightArrow"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <a class="">
+                <p>上传营业执照图片</p>
+                <div id="state" class="fr">未选择</div>
+                <div class="chooseFile">
+                    <input id="licensePicture" type="file" name="licensePicture" accept="image/*;capture=camera" />
+                </div>
+            </a>
+        </div>
+        <div class="menu">
+            <a class="last">
+                <p>联系电话</p>
+                <input name="brandName" type="text" value="" />
+            </a>
+        </div>
+
+        <div class="btn-wrap mt20 mb20" style="width:90%;">
+            <input type="button" value="确认" class="ui-btn ui-btn-green" onClick="javascript:X.boss_profile.create_corp.submit();">
+        </div>
+    </form>
+    <iframe id="iframe" name="iframe" style="display: none;"></iframe>
+
+</section>
+</body>
+</html>

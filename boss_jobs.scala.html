@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>职位管理</h1>
+        <a class="rightBox" href="/boss/job/new">发布</a>
+    </header>
+</div>
+
+<section class="box-content">
+    <div class="box-tab-white mb10">
+        <a href="/boss/jobs?order=date-desc&status=@status"><span @if(order=="date-desc"){class="bbcurr"}>新发布</span></a>
+        <a href="/boss/jobs?order=views-desc&status=@status"><span @if(order=="views-desc"){class="bbcurr"} class="bbcurr">被浏览</span></a>
+        <a href="/boss/jobs?order=delivers-desc&status=@status"><span @if(order=="delivers-desc"){class="bbcurr"}>被收藏</span></a>
+    </div>
+
+    <div class="jobs">
+        <a href="/boss/job/detail?jobId=@vo.getId()" class="job ml20 mr20" style="border:none;border-bottom: 1px #eee solid;margin-top: 0">
+            <div class="pt14 pb15">
+                <h2 class="c58 fs15 ln-hgt1">技术总监</h2>
+                <p class="fs12 mt6 cb8 ln-hgt1"><span class="mr18">10K-20K</span><span class="mr18">杭州</span><span>3年工作经验</span><img
+                        class="fr" src="assets/images/mobile/browse.png" width="30" height="20" alt=""></p>
+                <p class="mt6 pr20 ln-hgt1 fs12 cb8"><img height="14" width="20" src="assets/images/mobile/browse.png" /><span class="num">100</span><img height="14" width="20" src="assets/images/mobile/chat.png" /><span class="num">50</span></p>
+            </div>
+        </a>
+        <a href="/boss/job/detail?jobId=@vo.getId()" class="job ml20 mr20 white" style="border:none;border-bottom: 1px #eee solid;margin-top: 0">
+            <div class="pt14 pb15">
+                <h2 class="c58 fs15 ln-hgt1">技术总监</h2>
+                <p class="fs12 mt6 cb8 ln-hgt1"><span class="mr18">10K-20K</span><span class="mr18">杭州</span><span>3年工作经验</span><img
+                        class="fr" src="assets/images/mobile/browse.png" width="30" height="20" alt=""></p>
+                <p class="mt6 pr20 ln-hgt1 fs12 cb8"><img height="14" width="20" src="assets/images/mobile/browse.png" /><span class="num">100</span><img height="14" width="20" src="assets/images/mobile/chat.png" /><span class="num">50</span></p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<script type="text/javascript" src="/assets/javascripts/mobile/zepto.min.js"></script>
+<script type="text/javascript" src="/assets/javascripts/mobile/app.js"></script>
+                
+    <div id="box-bottom" class="box-bottom">
+        <footer id="footer">
+            <ul class="esp">
+                <li class="discovery">
+                    <a href="/boss/applicants"><i class="iconfont icon-find"></i><p>发现</p></a>
+                </li>
+                <li class="message">
+                    <a href="/boss/messages"><i class="iconfont icon-xiaoxi"></i><p>消息</p></a>
+                </li>
+                <li class="user">
+                    <a href="/boss/mine"><i class="iconfont icon-wode"></i><p>我的</p></a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

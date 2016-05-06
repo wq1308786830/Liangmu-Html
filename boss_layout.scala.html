@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>发现</h1>
+    </header>
+</div>
+
+<section class="box-content">
+    <div class="box-tab-white">
+        <!--TODO：选中的class要替换为新的bbcurr，另外最新最热对应的href地址要确认一下-->
+        <a href="/boss/applicants?order=last-desc"><span class="bbcurr">最新</span></a>
+        <a href="/boss/applicants?order=hot-desc"><span class="bbcurr">最热</a>
+        <a href="/boss/applicants?order=recommend-desc" class="last"><span class="bbcurr">系统推荐</a>
+    </div>
+
+    <section id="append-more" class="box-content">
+        <a href="/job/detail?jobId=" class="job mt20">
+            <div class="box-wrap ml10 mr10 pb10 fillet mt10" style="border: none">
+                <div class="box-flex c6a pb10 bb">
+                    <dl class="svgs box-flex-item txt-c flxbx3" style="line-height: 4">
+                        <dd>
+                            <img src="assets/" style="line-height: 90px"><p style="line-height: 40px"><span class="fs10 green-bd green br4" style="border-radius: 14px;padding: 4px 8px">技术专家</span></p>
+                        </dd>
+                    </dl>
+                    <dl class="mt10 box-flex-item flxbx7">
+                        <dt class="fs15 c58">大海啊都是水</dt>
+                        <dd class="fs12 mt5 cae">产品运营 | 3年经验<span>杭州</span><span>10K-20K</span></dd>
+                        <dd class="fs12 c89 mt20">服务过 : &nbsp;<span>华为、阿里巴巴</span></dd>
+                        <dd class="fs12 mt5 c89">关注 : &nbsp;<span>社交、娱乐</span></dd>
+                        <dd class="fs12 mt5 c89">状态 : &nbsp;<span>随便看</span></dd>
+                    </dl>
+                </div>
+                <div class="box-flex cb8 pt10 box-end" style="color: #bbb8bb;"><p class="fs10">最近登录 : &nbsp;<span>昨天</span></p></div>
+            </div>
+        </a>
+        <a href="/job/detail?jobId=" class="job mt20">
+            <div class="box-wrap ml10 mr10 pb10 fillet mt10" style="border: none">
+                <div class="box-flex c6a pb10 bb">
+                    <dl class="svgs box-flex-item txt-c flxbx3" style="line-height: 4">
+                        <dd>
+                            <img src="assets/" style="line-height: 90px"><p style="line-height: 40px"><span class="fs10 green-bd green br4" style="border-radius: 14px;padding: 4px 8px">技术专家</span></p>
+                        </dd>
+
+                    </dl>
+                    <dl class="mt10 box-flex-item flxbx7">
+                        <dt class="fs16 c58">大海啊都是水</dt>
+                        <dd class="fs12 mt5 cae">产品运营 | 3年经验<span>杭州</span><span>10K-20K</span></dd>
+                        <dd class="fs12 c89 mt20">服务过 : &nbsp;<span>华为、阿里巴巴</span></dd>
+                        <dd class="fs12 mt5 c89">关注 : &nbsp;<span>社交、娱乐</span></dd>
+                        <dd class="fs12 mt5 c89">状态 : &nbsp;<span>随便看</span></dd>
+                    </dl>
+                </div>
+                <div class="box-flex cb8 pt10 box-end" style="color: #bbb8bb;"><p class="fs10">最近登录 : &nbsp;<span>昨天</span></p></div>
+            </div>
+        </a>
+    </section>
+
+    <div class="ml10 mr10">
+        <a class="box-more" id="page-title">已经是尾页</a>
+        <a class="box-more" id="page-title" href="javascript:nextPage();">下一页</a>
+    </div>
+
+    <script type="text/javascript" src="/assets/javascripts/mobile/zepto.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/mobile/app.js"></script>
+    <script type="text/javascript">
+        var page = @paginator.getPage();
+        var pages= @paginator.getPages();
+
+        function nextPage(){
+            page++;
+            X.ajaxget('/boss/applicants?order=@{order}',{page:page},function(data){
+                $("#append-more").append(data);
+                if(page >= pages ){
+                    $("#page-title").attr("href","javascript:void(0)");
+                    $("#page-title").text('已经是最后一页');
+                }
+            });
+        }
+
+    </script>
+                
+    <div id="box-bottom" class="box-bottom">
+        <footer id="footer">
+            <ul class="esp">
+                <li class="discovery">
+                    <a href="/boss/applicants"><i class="iconfont icon-find"></i><p>发现</p></a>
+                </li>
+                <li class="message">
+                    <a href="/boss/messages"><i class="iconfont icon-xiaoxi"></i><p>消息</p></a>
+                </li>
+                <li class="user">
+                    <a href="/boss/mine"><i class="iconfont icon-wode"></i><p>我的</p></a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

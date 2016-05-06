@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>发现</h1>
+    </header>
+</div>
+
+<section class="box-content">
+    <div class="systemMessages box-wrap pt10 pr20 pb10 pl20" style="border: none">
+        <a href="/boss/system_messages">
+            <div class="clearfix">
+                <p class="fl fs16"><i class="iconfont icon-diannaoduan black mr10" style="font-size:24px;"></i>系统消息</p>
+                <p class="fr mt10 fs14" style="height:25px;">您有<span class="green">2</span>条未读消息</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="append-more" class="messages mt10">
+        <a href="/boss/message/detail?applicantId=@{vo.getApplicantId()}&jobId=@{vo.getJobId()}" class="message box-wrap mt5" style="border: none">
+            <div class="box-flex pl20 pr20 pt10 pb10">
+                <img src="assets/images/mobile/default_avatar.png" width="50" height="50" class="avatar">
+                <dl class="ml20 box-flex-item">
+                    <dt class="fs18">李二宝</dt>
+                    <dd class="fs14 c83">3年经验 | 内容运营  | 经理级别</span></dd>
+                    <dd class="fs14 grey mt10">你好，上次提到你打算春节后考虑新的职…</dd>
+                </dl>
+            </div>
+        </a>
+    </div>
+</section>
+
+<div class="ml10 mr10">
+        <a class="box-more" id="page-title">已经是尾页</a>
+        <a class="box-more" id="page-title" href="javascript:nextPage();">下一页</a>
+    </div>
+
+    <script type="text/javascript" src="/assets/javascripts/mobile/zepto.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/mobile/app.js"></script>
+    <script type="text/javascript">
+        var page = @paginator.getPage();
+        var pages= @paginator.getPages();
+
+        function nextPage(){
+            page++;
+            X.ajaxget('/boss/applicants?order=@{order}',{page:page},function(data){
+                $("#append-more").append(data);
+                if(page >= pages ){
+                    $("#page-title").attr("href","javascript:void(0)");
+                    $("#page-title").text('已经是最后一页');
+                }
+            });
+        }
+
+    </script>
+
+    <div id="box-bottom" class="box-bottom">
+        <footer id="footer">
+            <ul class="esp">
+                <li class="discovery">
+                    <a href="/boss/applicants"><i class="iconfont icon-find"></i><p>发现</p></a>
+                </li>
+                <li class="message">
+                    <a href="/boss/messages"><i class="iconfont icon-xiaoxi"></i><p>消息</p></a>
+                </li>
+                <li class="user">
+                    <a href="/boss/mine"><i class="iconfont icon-wode"></i><p>我的</p></a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

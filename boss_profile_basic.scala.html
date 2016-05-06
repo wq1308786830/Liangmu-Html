@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<title>梁木</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/mobile/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="box-top" class="box-top">
+    <header id="header">
+        <h1>基本资料</h1>
+        <a class="goBack" href="@from"></a>
+    </header>
+</div>
+<section id="profile-form " class="box-content">
+    <iframe id="iframe" name="iframe" style="display: none;"></iframe>
+    <form id="form" method="post" action="/boss/profile/basic" target="iframe" enctype="multipart/form-data">
+        <p class="dflticon fs16 pt10 mb5 ml15">关联您所在公司</p>
+        <div class="menu">
+            <a style="border: none;padding-left: 10px">
+                <input id="corporation" class="autocomplete-input" style="text-align: left;padding-left: 0" name="corporation" type="text" placeholder="输入公司名称或品牌名" value="" />
+                <p class="autocomplete-result"></p>
+                    <textarea id="noresult" class="hide">
+                        <div class="mt10 ml20 pr10 clearfix">
+                            <a href="/boss/profile/create_corporation" class=" ">没有您所在公司?可以马上申请公司入驻</a>
+                        </div>
+                    </textarea>
+            </a>
+        </div>
+
+        <p class="dflticon fs16 pt10 mb5 ml15">个人资料</p>
+        <div class="menu">
+            <a style="padding-left: 10px">
+                <p>姓名</p>
+                <input id="nickname" name="nickname" type="text" value="" />
+            </a>
+        </div>
+        <div class="menu">
+            <a style="padding-left: 10px">
+                <p>性别</p>
+                <select name="">
+                    <option value="">男</option>
+                    <option value="">女</option>
+                </select>
+                <i class="rightArrow"></i>
+            </a>
+        </div>
+
+
+        <div class="menu">
+            <a style="padding-left: 10px">
+                <p>职位名称</p>
+                <input id="title" name="title" type="text" value="" placeholder="建议4字以内"/>
+            </a>
+        </div>
+
+        <div class="menu">
+            <a class="last" style="padding-left: 10px">
+                <p>上传证明信息: 营业执照、名片、工牌等</p>
+                <div class="chooseFile">
+                    <input id="badgePicture" type="file" name="badgePicture" accept="image/*;capture=camera" /><i class="rightArrow"></i>
+                </div>
+            </a>
+        </div>
+
+    </form>
+
+
+    <div class="pt10 ml20 mr20 mt20 mb20">
+        <input type="button" value="提交" class="ui-btn ui-btn-green" onClick="javascript:X.boss_profile.basic.submit();">
+    </div>
+
+</section>
+</body>
+</html>
