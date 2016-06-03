@@ -141,6 +141,11 @@ X.profile.tag={
                 X.dialog.tips("我的报价填写错误");
                 return false;
             }
+            if(!X.valid.isInt(config.price)){
+                X.dialog.tips("沟通礼金只能输入整数!");
+                return false;
+
+            }
 
             return true;
         }, 
@@ -186,7 +191,24 @@ X.profile.avatar={
                 }
                 X.loading.show();
                 $("#uploadAvatar").submit();
-        }
+        },
+        submit:function(dom,target){
+            var param;
+            for(var i=0;i<dom.length;i++){
+                if(dom[i].checked){param = "avatar="+dom[i].getAttribute("value");}
+            }
+
+            X.ajax(target+"/profile/upload_avatar",param,function(data){
+                    if(data.success){
+                        X.dialog.tips("设置成功");
+                        X.timing.setInterval(function(){
+                            window.location.href=target+"/mine";
+                        },500);
+                    }else{
+                        X.dialog.tips(data.message);
+                    }
+            });
+        },
 };
 
 X.profile.resume={

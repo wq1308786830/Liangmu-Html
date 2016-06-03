@@ -55,13 +55,14 @@ var ZeptoAutocomplete = {
         this.init(limit, data, caseSensitive, showFunc, hideFunc, noresultHtml);
         var searchTextField = $('.autocomplete-input');
         var _this = this;
-        searchTextField.bind("keyup", $.proxy(this._handleLocalSearch, _this));
+        searchTextField.bind("input", $.proxy(this._handleLocalSearch, _this));
     },
     _initRemote: function (limit, data, caseSensitive, showFunc, hideFunc, noresultHtml) {
         this.init(limit, data, caseSensitive, showFunc, hideFunc, noresultHtml);
         var searchTextField = $('.autocomplete-input');
         var _this = this;
-        searchTextField.bind("keyup", $.proxy(this._handleRemoteSearch, _this));
+        /*keyup替换为input事件*/
+        searchTextField.bind("input", $.proxy(this._handleRemoteSearch, _this));
     },
     _isWithinLimit: function (message) {
         return message !== undefined && message.length > this.limit;

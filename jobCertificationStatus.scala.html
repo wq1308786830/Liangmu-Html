@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jobCertificationStatusApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta http-equiv="cleartype" content="on"/>
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>茅炉</title>
+    <link href="assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body ng-controller="jobCertificationStatusCtrl">
+<div>
+    <section id="box-top" class="box-top" style="height: 44px">
+        <header id="header">
+            <h1>工作认证</h1>
+        </header>
+    </section>
+    <section class="box-content" style="background-color: #eee;margin-top: 0">
+        <form ng-submit="SubmitForms()" class=" ">
+
+            <div class="box-wrap pl20 pr20 pt10 pb10" style="background-color: #eee;border: none;padding-top: 50px">
+                <div class="box-wrap c6a">
+                    <div class="box-flex wbpc spcl-img">
+                        <img src="assets/images/mobile/jobCertificated.png" alt="" width="70" height="70"
+                             style="border: none">
+                    </div>
+
+                    <section ng-if="realAuditString != '已认证'" class="box-flex" style="padding-top: 27px">
+                        <dl class="box-flex-item txt-c br8" style="background-color: #fff;">
+                            <dt class="ln-hgt1 pt5"><img src="assets/images/mobile/certificated.png" alt="" width="70"
+                                                         height="28"></dt>
+                            <dd class="ln-hgt1 fs15 pt5 c3cb">{{records.name}} &nbsp;&nbsp;&nbsp;
+                                {{records.idCard}}
+                            </dd>
+                        </dl>
+                    </section>
+
+                    <section ng-if="realAuditString != '已认证'" class="box-flex" style="padding-top: 27px">
+                        <dl class="box-flex-item txt-c br8" style="background-color: #fff;">
+                            <dt class="ln-hgt1 pt5"><img src="assets/images/mobile/uncertificated.png" alt="" width="70"
+                                                         height="28"></dt>
+                            <dd class="ln-hgt1 fs15 pt20">
+                                <input ng-model="formData.name" ng-required="true" class="certificate-input" type="text"
+                                       id="name" name="name" value="" placeholder="请输入姓名" maxlength="15" minlength="2">
+                            </dd>
+                            <dd class="ln-hgt1 fs15 pt20 pb20">
+                                <div class="input-file" style="">
+                                    <input ng-model="formData.degreeCard" ng-required="true" class="certificate-input"
+                                           type="file" style=""
+                                           accept="image/*;capture=camera" id="degreeCard" name="degreeCard" value=""
+                                           placeholder="请选择毕业证或学位证照片">
+                                </div>
+
+                            </dd>
+                        </dl>
+                    </section>
+                </div>
+
+                <section class="btn-wrap mt20 mb20" style="width:100%;">
+                    <input ng-if="educationAuditString == '已认证'" ng-click="modifyMsg()"
+                           class="ui-btn ui-btn-green" type="button" value="变更">
+                    <input ng-if="educationAuditString != '已认证'" class="ui-btn ui-btn-green" type="submit"
+                           value="提交">
+                </section>
+            </div>
+        </form>
+
+    </section>
+
+</div>
+</body>
+<script src="assets/javascripts/admin/jquery-1.12.3.min.js" type="text/javascript"></script>
+<script src="assets/javascripts/admin/global_config.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/javascripts/mobile/app.js"></script>
+<script src="assets/javascripts/angular.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/javascripts/mobile/certification.js"></script>
+</html>

@@ -210,7 +210,8 @@ body.single_form #content #single_form {
 
 ul#navigation {
     float: left;
-    margin-top: 6px
+    margin-top: 6px;
+    margin-bottom: 0;
 }
 
 ul#navigation li {
@@ -2193,3 +2194,16 @@ div.popup h3.title {
 .paging-list {
     padding-bottom: 100px;
 }
+.prev-disabled,.next-disabled{
+    text-decoration: none;
+    color: #777;
+    cursor: default;
+}
+.page-list .pagination {  float: left;  }
+.page-list .pagination span {  cursor: pointer;  }
+.page-list .pagination .separate span {  cursor: default;  border-top: none;  border-bottom: none;  }
+.page-list .pagination .separate span:hover {  background: none;  }
+.page-list .page-total {  float: left;  margin: 25px 20px;  }
+.page-list .page-total input, .page-list .page-total select {  height: 26px;  border: 1px solid #ddd;  }
+.page-list .page-total input {  width: 40px;  padding-left: 3px;  }
+.page-list .page-total select {  width: 50px;  }

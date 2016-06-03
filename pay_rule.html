@@ -90,10 +90,6 @@
         var oTop = document.getElementById("go_top");
         var screenw = document.documentElement.clientWidth || document.body.clientWidth;
         var screenh = document.documentElement.clientHeight || document.body.clientHeight;
-        window.onscroll = function(){
-            var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
-            oTop.style.top = screenh - oTop.offsetHeight + scrolltop +"px";
-        };
         oTop.onclick = function(){
             document.documentElement.scrollTop = document.body.scrollTop =0;
         }

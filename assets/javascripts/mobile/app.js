@@ -106,10 +106,12 @@ X.form={
 				var btn=$("#"+btn);
 				btn.prop('disabled',true);
 				btn.attr({ "disabled": "disabled" });
+				btn.removeClass("green-bd");
 			},
 			enable:function(btn){
 				var btn=$("#"+btn);
 				btn.prop('disabled',false);
+				btn.addClass("green-bd");
 			},
 			
 		}

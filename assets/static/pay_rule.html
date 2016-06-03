@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>茅炉</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta http-equiv="cleartype" content="on" />
+<link href="/assets/stylesheets/mobile/base.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+    html,body{height: 100%;width: 100%;}
+    p{  padding: 15px 15px 15px 0;font-size: 14px;color: #3f3f3f;  }
+    h2{font-size: 18px;color: #131313;padding: 0;height: 60px;line-height: 60px;border-bottom: 1px #d4d4d4 solid;  }
+    section{background-color: #fff;line-height: 1.5;color: #3f3f3f;font-size: 14px;padding: 0 15px 15px 15px;margin: 15px;}
+    #go_top{background: url("/assets/images/mobile/gotop.png") no-repeat;background-size: 40px 40px;position: fixed;bottom: 25px;right: 15px;height: 40px;width: 40px;}
+</style>
+<body>
+<div id="box-top" class="box-top" style="height: 44px">
+    <header id="header">
+        <h1>礼金结算规则</h1>
+        <a class="goBack" href="/capital/incomes"></a>
+    </header>
+</div>
+<section>
+    <h2><img style="margin-right: 8px" src="/assets/images/mobile/tip.png" alt="" width="22" height="22">人才礼金结算规则</h2>
+    <p class="bb">1.人才礼金在人才同意沟通后即可入账（扣除平台佣金部分），平台采用月度结算的方式，人才可以在每月“发薪日”之后申请提现，未提现部分累积在账户中可随时提现。</p>
+    <p class="bb">2.“发薪日”从用户注册日的一个月开始，此后每个月的对应日期为当月的“发薪日”，例如：人才孔先生在2016年4月30日注册，那么后续的发薪日分别是 5月30日、6月30日、7月30日…… 2月28日（当月没有对应日的时候）。</p>
+    <p>3.发薪日结算金额为发薪日前3天所有已到账、未结算（且未被平台规则冻结的部分），例如：人才孔先生的发薪日为每月30日，则每月27日（含）之前所有到账礼金都可以结算，并在30日申请提现。</p>
+</section>
+<div id="go_top"></div>
+</body>
+<script>
+        var oTop = document.getElementById("go_top");
+        var screenw = document.documentElement.clientWidth || document.body.clientWidth;
+        var screenh = document.documentElement.clientHeight || document.body.clientHeight;
+
+        oTop.onclick = function(){
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+</script>
+</html>

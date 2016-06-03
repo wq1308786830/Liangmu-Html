@@ -11,4 +11,16 @@ X.boss_contact={
             }
         });    
     },
+    unfavorite_post: function(applicantId, jobId){
+            X.ajax("/boss/applicant/unfavorite",{"applicantId": applicantId, "jobId": jobId},function(data){
+                if(data.success){
+                    X.dialog.tips("取消收藏成功");
+                    X.timing.setInterval(function(){
+                        window.location.reload();
+                    },500);
+                }else{
+                    X.dialog.tips(data.message);
+                }
+            });
+        },
 };

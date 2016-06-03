@@ -191,14 +191,14 @@ X.user={
 			var mobile=$('#mobile').val();
             if(!X.valid.isMobile(mobile)){
                 X.dialog.tips('请输入正确的手机号码');
-                return;
+                return false;
             }
             var code=$('#checkcode').val();
-            if($.clear(code).length==0 || code=='验证码'){
+            if($.clear(code).length==0 || code=='请输入您收到的验证码'){
                 X.dialog.tips('请输入验证码');
                 return false;
             }
-			var password=$('#password').val();
+			var password=$('#pass').val();
 			if(password.length<6 || password.length>16){
 				X.dialog.tips('6-16位数字和字母组成');
 				return false;
@@ -208,7 +208,7 @@ X.user={
 				return false;
 			}
 
-			
+
 			X.ajax("/forget_submit",{checkcode:code,mobile:mobile,password:password},function(data){
 				if(data.success){
 					X.dialog.tips("密码修改成功 请重新登录");

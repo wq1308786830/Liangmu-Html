@@ -6,6 +6,7 @@ X.job.save={
         getFormData:function(){
             var config = {};
             config.name = $("input[name='name']").val();
+            config.reportTo=$("input[name='reportTo']").val();
             config.functional1 = $("select[name='functional1']").find("option:selected").val();
             config.functional2 = $("select[name='functional2']").find("option:selected").val();            
             config.lowestSalary = $("select[name='salary']").find("option:selected").val();
@@ -30,7 +31,7 @@ X.job.save={
                 return false;
             }
             if($.trim(config.lowestSalary)==''){
-                X.dialog.tips("请输入薪酬范围");
+                X.dialog.tips("请输入起步年薪");
                 return false;
             }
             if($.trim(config.workExperience)==''){
@@ -80,7 +81,9 @@ X.job.delivery={
                 if(data.success){
                     X.dialog.tips("投递成功");
                     X.timing.setInterval(function(){
-                        window.location.reload();
+                    	//投递成功后，创建一个沟通，进入消息页面
+                    	window.location.href="/system_messages"
+                        //window.location.reload();
                     },500);                       
                 }else{
                     X.dialog.tips(data.message);
@@ -124,7 +127,9 @@ X.job.hide={
         submit:function(jobId){
             X.ajax("/boss/job/hide",{"jobId":jobId},function(data){
                 if(data.success){
-                    X.dialog.tips("职位隐藏成功");
+                    X.dialog.tips("职位关闭成功");
+                    window.location.reload();
+
                 }else{
                     X.dialog.tips(data.message);
                 }
@@ -150,9 +155,9 @@ X.job.rate={
         getFormData:function(){
             var config = {};
             config.jobId = $("input[name='jobId']").val();
-            config.jobDescriptionRating = $("select[name='jobDescriptionRating']").find("option:selected").val();
-            config.interviewerRating = $("select[name='interviewerRating']").find("option:selected").val();            
-            config.corporateEnvironmental = $("select[name='corporateEnvironmental']").find("option:selected").val();
+            config.jobDescriptionRating = $("span[id='jobDescriptionRating']").attr("data");
+            config.interviewerRating = $("span[id='interviewerRating']").attr("data");
+            config.corporateEnvironmental = $("span[id='corporateEnvironmental']").attr("data");
             config.note = $("textarea[name='note']").val();
             return config;
         },
